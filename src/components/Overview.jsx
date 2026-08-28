@@ -139,27 +139,30 @@ const Overview = () => {
               onMouseLeave={() => setActiveHover(null)}
               className="group relative h-full flex flex-col transition-all duration-500 ease-out hover:-translate-y-1.5"
             >
-              {/* Chamfered Outer Border Container with thicker 2px border */}
+              {/* Chamfered Outer Border Container with refined gradient rim */}
               <div
-                className="relative h-full flex flex-col flex-1 p-[2px] bg-white/[0.4] group-hover:bg-white/[0.85] transition-colors duration-500"
+                className="relative h-full flex flex-col flex-1 p-[2px] bg-gradient-to-b from-white/60 via-white/20 to-white/10 group-hover:from-white group-hover:via-white/50 group-hover:to-white/20 transition-all duration-500 shadow-[0_10px_35px_rgba(0,0,0,0.6)] group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_25px_rgba(255,255,255,0.06)]"
                 style={{
                   clipPath: 'polygon(32px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 32px)',
                 }}
               >
-                {/* Chamfered Inner Card Content */}
+                {/* Chamfered Inner Card Content (Glassmorphic & Glary) */}
                 <div
-                  className="relative h-full flex-1 flex flex-col justify-between p-8 sm:p-10 bg-[#07070a] group-hover:bg-[#0b0b0f] backdrop-blur-md transition-colors duration-500"
+                  className="relative h-full flex-1 flex flex-col justify-between p-8 sm:p-10 bg-[#08090e]/80 group-hover:bg-[#0d0e17]/90 backdrop-blur-xl transition-all duration-500 overflow-hidden"
                   style={{
                     clipPath: 'polygon(30px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 30px)',
                   }}
                 >
+                  {/* Glary Top Specular Light Sheen */}
+                  <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/[0.08] via-white/[0.02] to-transparent pointer-events-none" />
+
                   {/* Subtle corner crosshairs on non-cut corners */}
                   <span className="absolute top-[4px] right-[4px] text-[9px] font-mono text-white/30 group-hover:text-white/70 transition-colors">+</span>
                   <span className="absolute bottom-[4px] left-[4px] text-[9px] font-mono text-white/30 group-hover:text-white/70 transition-colors">+</span>
                   <span className="absolute bottom-[4px] right-[4px] text-[9px] font-mono text-white/30 group-hover:text-white/70 transition-colors">+</span>
 
                   {/* Card top */}
-                  <div className="flex-1 flex flex-col">
+                  <div className="relative z-10 flex-1 flex flex-col">
                     {/* Header row */}
                     <div className="flex items-center justify-between mb-8 pl-3">
                       <span className="font-mono text-[0.75rem] tracking-[0.2em] text-white/40 group-hover:text-white transition-colors">
@@ -180,7 +183,7 @@ const Overview = () => {
                   </div>
 
                   {/* Card bottom */}
-                  <div className="mt-auto">
+                  <div className="relative z-10 mt-auto">
                     {/* Metric */}
                     <div className="pt-6 border-t border-white/[0.08] mb-6 flex items-baseline justify-between">
                       <span className="font-syne font-extrabold text-[1.9rem] text-white tracking-tight">
