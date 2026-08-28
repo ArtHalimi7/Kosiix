@@ -42,13 +42,14 @@ const ScrollExpand = ({
   const hintRef = useRef(null);
 
   const propsRef = useRef({});
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
   propsRef.current = {
-    startWidth,
-    startHeight,
-    startRadius,
+    startWidth: isMobile ? Math.max(startWidth, 82) : startWidth,
+    startHeight: isMobile ? Math.max(startHeight, 54) : startHeight,
+    startRadius: isMobile ? Math.min(startRadius, 16) : startRadius,
     endRadius,
     mediaZoom,
-    scrollDistance,
+    scrollDistance: isMobile ? Math.max(scrollDistance, 0.8) : scrollDistance,
     holdDistance,
     smoothing,
     overlayScrim,

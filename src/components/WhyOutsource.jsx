@@ -151,29 +151,29 @@ const WhyOutsource = () => {
   return (
     <section
       id="why-outsource"
-      className="relative w-full pt-10 pb-32 sm:pt-16 sm:pb-44 px-6 md:px-12 bg-transparent"
+      className="relative w-full pt-6 pb-24 sm:pt-16 sm:pb-44 px-4 sm:px-6 md:px-12 bg-transparent"
     >
       <div className="max-w-[1320px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 sm:mb-28 pb-12 border-b border-white/[0.08]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 sm:mb-28 pb-8 sm:pb-12 border-b border-white/[0.08]">
           <div>
             {/* Tag */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4 sm:mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-white/50 animate-pulse" />
-              <p className="text-[0.65rem] sm:text-[0.7rem] font-inter font-medium tracking-[0.28em] uppercase text-white/40">
+              <p className="text-[0.65rem] sm:text-[0.7rem] font-inter font-medium tracking-[0.24em] uppercase text-white/40">
                 Strategic Advantage // Outsourcing Reinvented
               </p>
             </div>
 
             {/* Headline */}
-            <h2 className="font-syne font-extrabold text-[2.4rem] sm:text-[3.6rem] md:text-[4.4rem] leading-[1.04] tracking-[-0.04em] text-white">
+            <h2 className="font-syne font-extrabold text-[2.2rem] sm:text-[3.6rem] md:text-[4.4rem] leading-[1.04] tracking-[-0.04em] text-white">
               Why Outsource <br />
               With KOSIIX.
             </h2>
           </div>
 
           {/* Editorial statement */}
-          <div className="mt-8 md:mt-0 max-w-[460px]">
+          <div className="mt-6 md:mt-0 max-w-[460px]">
             <p className="font-inter text-[0.88rem] sm:text-[0.95rem] font-light text-white/40 leading-[1.75]">
               Traditional outsourcing is broken—marred by junior turnover and timezone lag. KOSIIX provides dedicated European engineering squads that operate as an elite extension of your internal team.
             </p>
@@ -181,7 +181,7 @@ const WhyOutsource = () => {
         </div>
 
         {/* 4 Pillars Grid with Chamfered Cut-Corner Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch mb-24 sm:mb-32">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch mb-20 sm:mb-32">
           {corePillars.map((item) => (
             <div
               key={item.id}
@@ -191,14 +191,14 @@ const WhyOutsource = () => {
               <div
                 className="relative h-full flex flex-col flex-1 p-[2px] bg-gradient-to-b from-white/60 via-white/20 to-white/10 group-hover:from-white group-hover:via-white/50 group-hover:to-white/20 transition-all duration-500 shadow-[0_10px_35px_rgba(0,0,0,0.6)] group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_25px_rgba(255,255,255,0.06)]"
                 style={{
-                  clipPath: 'polygon(32px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 32px)',
+                  clipPath: 'polygon(24px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 24px)',
                 }}
               >
                 {/* Chamfered Inner Card Content (Glassmorphic & Glary) */}
                 <div
-                  className="relative h-full flex-1 flex flex-col justify-between p-7 sm:p-8 bg-[#08090e]/80 group-hover:bg-[#0d0e17]/90 backdrop-blur-xl transition-all duration-500 overflow-hidden"
+                  className="relative h-full flex-1 flex flex-col justify-between p-6 sm:p-8 bg-[#08090e]/80 group-hover:bg-[#0d0e17]/90 backdrop-blur-xl transition-all duration-500 overflow-hidden"
                   style={{
-                    clipPath: 'polygon(30px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 30px)',
+                    clipPath: 'polygon(22px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 22px)',
                   }}
                 >
                   {/* Glary Top Specular Light Sheen */}

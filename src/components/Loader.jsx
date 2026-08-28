@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import StrokeText from './StrokeText/StrokeText';
 
-const Loader = ({ onLoaded = () => {} }) => {
-  const [isExiting, setIsExiting] = useState(false);
-  const [isDone, setIsDone] = useState(false);
+const Loader = ({ onExitStart = () => {}, onComplete = () => {} }) => {
+  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    // Lock body scroll while loader is visible
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = '';
@@ -14,33 +12,32 @@ const Loader = ({ onLoaded = () => {} }) => {
   }, []);
 
   const handleAnimationComplete = () => {
-    // Hold solid text briefly, then fade out and trigger page animations
+    // Hold solid white text briefly, then execute a clean, luxurious fade out
     setTimeout(() => {
-      setIsExiting(true);
-      onLoaded(); // Trigger hero animations right as loader starts smooth fade-out
-      setTimeout(() => {
-        setIsDone(true);
-        document.body.style.overflow = '';
-      }, 700);
-    }, 400);
-  };
+      onExitStart(); // Trigger page entrance animations behind the loader
+      setIsFading(true);
 
-  if (isDone) return null;
+      setTimeout(() => {
+        document.body.style.overflow = '';
+        onComplete(); // Unmount loader after fade transition completes
+      }, 700);
+    }, 350);
+  };
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex items-center justify-center p-6 select-none transition-opacity duration-700 ease-in-out ${
-        isExiting ? 'opacity-0 pointer-events-none' : 'opacity-100'
+      className={`fixed inset-0 z-[9999] flex items-center justify-center p-6 select-none transition-opacity duration-700 ease-out ${
+        isFading ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       style={{ background: '#050507' }}
     >
       <div className="w-full max-w-[600px] flex justify-center">
         <StrokeText
           text="KOSIIX"
-          fontSize={window.innerWidth < 640 ? 56 : 92}
+          fontSize={typeof window !== 'undefined' && window.innerWidth < 640 ? 56 : 92}
           fontWeight={700}
           fontFamily='"Space Grotesk", sans-serif'
-          letterSpacing={window.innerWidth < 640 ? -1 : -2.5}
+          letterSpacing={typeof window !== 'undefined' && window.innerWidth < 640 ? -1 : -2.5}
           strokeWidth={1.3}
           strokeColor="#ffffff"
           fillColor="#ffffff"

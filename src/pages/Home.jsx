@@ -3,6 +3,8 @@ import Overview from '../components/Overview';
 import ScrollExpand from '../components/ScrollExpand/ScrollExpand';
 import SectionDivider from '../components/SectionDivider';
 import WhyOutsource from '../components/WhyOutsource';
+import SquadCalculator from '../components/SquadCalculator';
+import FAQ from '../components/FAQ';
 import bgImage from '../assets/bg.png';
 
 const Home = () => {
@@ -10,12 +12,12 @@ const Home = () => {
     <>
       <Hero />
 
-      {/* ── Continuous Unified Canvas for Overview, Showcase & WhyOutsource ── */}
-      <div className="relative w-full bg-[#050507]">
+      {/* ── Continuous Unified Canvas for Overview, Showcase, WhyOutsource, Calculator & FAQ ── */}
+      <div className="relative w-full bg-[#050507] overflow-x-clip">
         {/* ── Continuous Floating Glowing Blobs ── */}
         {/* 1. Top-Left Overview Header Glow */}
         <div
-          className="blob-float-1 absolute top-[4%] -left-20 w-[500px] sm:w-[750px] h-[380px] sm:h-[550px] rounded-full pointer-events-none z-0"
+          className="blob-float-1 absolute top-[3%] -left-20 w-[500px] sm:w-[750px] h-[380px] sm:h-[550px] rounded-full pointer-events-none z-0"
           style={{
             background:
               'radial-gradient(circle at 45% 45%, rgba(255, 255, 255, 0.22) 0%, rgba(21, 23, 34, 0.85) 45%, rgba(12, 13, 20, 0.6) 65%, transparent 85%)',
@@ -25,7 +27,7 @@ const Home = () => {
 
         {/* 2. Seamless Transition Glow spanning Overview ➔ ScrollExpand ➔ SectionDivider (Right Side) */}
         <div
-          className="blob-float-2 absolute top-[24%] -right-24 w-[580px] sm:w-[900px] h-[550px] sm:h-[800px] rounded-full pointer-events-none z-0"
+          className="blob-float-2 absolute top-[18%] -right-24 w-[580px] sm:w-[900px] h-[550px] sm:h-[800px] rounded-full pointer-events-none z-0"
           style={{
             background:
               'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.22) 0%, rgba(21, 23, 34, 0.85) 45%, rgba(12, 13, 20, 0.55) 68%, transparent 85%)',
@@ -35,7 +37,7 @@ const Home = () => {
 
         {/* 3. Center-Left WhyOutsource Pillars Glow */}
         <div
-          className="blob-float-3 absolute top-[52%] -left-20 w-[520px] sm:w-[800px] h-[420px] sm:h-[620px] rounded-full pointer-events-none z-0"
+          className="blob-float-3 absolute top-[38%] -left-20 w-[520px] sm:w-[800px] h-[420px] sm:h-[620px] rounded-full pointer-events-none z-0"
           style={{
             background:
               'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(21, 23, 34, 0.8) 45%, rgba(12, 13, 20, 0.5) 68%, transparent 85%)',
@@ -43,9 +45,9 @@ const Home = () => {
           }}
         />
 
-        {/* 4. Comparison Matrix Spotlight Glow (Right) */}
+        {/* 4. Comparison Matrix & Calculator Glow (Right) */}
         <div
-          className="blob-float-2 absolute top-[75%] -right-16 w-[580px] sm:w-[880px] h-[400px] sm:h-[600px] rounded-full pointer-events-none z-0"
+          className="blob-float-2 absolute top-[55%] -right-16 w-[580px] sm:w-[880px] h-[400px] sm:h-[600px] rounded-full pointer-events-none z-0"
           style={{
             background:
               'radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(21, 23, 34, 0.85) 45%, rgba(12, 13, 20, 0.55) 68%, transparent 85%)',
@@ -53,12 +55,22 @@ const Home = () => {
           }}
         />
 
-        {/* 5. Bottom Consultation CTA Glow (Left) */}
+        {/* 5. Squad Calculator Accent Glow (Left) */}
         <div
-          className="blob-float-1 absolute bottom-[2%] left-[10%] w-[480px] sm:w-[700px] h-[340px] sm:h-[500px] rounded-full pointer-events-none z-0"
+          className="blob-float-1 absolute top-[72%] -left-24 w-[520px] sm:w-[800px] h-[420px] sm:h-[600px] rounded-full pointer-events-none z-0"
           style={{
             background:
               'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(21, 23, 34, 0.85) 45%, rgba(12, 13, 20, 0.55) 65%, transparent 85%)',
+            filter: 'blur(75px)',
+          }}
+        />
+
+        {/* 6. FAQ Section Spotlight Glow (Right) */}
+        <div
+          className="blob-float-3 absolute bottom-[2%] -right-20 w-[450px] sm:w-[700px] h-[350px] sm:h-[500px] rounded-full pointer-events-none z-0"
+          style={{
+            background:
+              'radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(21, 23, 34, 0.8) 45%, rgba(12, 13, 20, 0.5) 65%, transparent 85%)',
             filter: 'blur(70px)',
           }}
         />
@@ -104,6 +116,12 @@ const Home = () => {
 
           <SectionDivider label="STRATEGIC EVALUATION // ADVANTAGE MATRIX" />
           <WhyOutsource />
+
+          <SectionDivider label="ARBITRAGE CALCULATOR // SQUAD ESTIMATOR" />
+          <SquadCalculator />
+
+          <SectionDivider label="TERMS & GOVERNANCE // FREQUENTLY ANSWERED" />
+          <FAQ />
         </div>
       </div>
     </>
