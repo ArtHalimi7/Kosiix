@@ -101,20 +101,8 @@ const Overview = () => {
     <section
       id="overview"
       ref={containerRef}
-      className="relative w-full py-32 sm:py-44 px-6 md:px-12 overflow-hidden"
-      style={{ background: '#050507' }}
+      className="relative w-full pt-32 pb-10 sm:pt-44 sm:pb-16 px-6 md:px-12 bg-transparent"
     >
-      {/* Background ambient lighting */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(255, 255, 255, 0.035) 0%, transparent 70%)',
-        }}
-      />
-
-      {/* Grid lines background decoration */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
-
       <div className="max-w-[1320px] mx-auto relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 sm:mb-28 pb-12 border-b border-white/[0.08]">
