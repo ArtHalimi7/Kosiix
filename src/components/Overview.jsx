@@ -10,17 +10,24 @@ const pillars = [
     metricLabel: 'Uptime SLA',
     tags: ['IP Transit', 'IPv4 / IPv6 Subnets', 'BGP Peering', 'DDoS Protection'],
     pathSvg: (
-      <svg viewBox="0 0 120 120" className="w-16 h-16 opacity-30 group-hover:opacity-80 transition-opacity duration-500 text-white stroke-current fill-none">
-        <circle cx="60" cy="60" r="50" strokeWidth="0.8" strokeDasharray="3 3" />
-        <circle cx="60" cy="60" r="32" strokeWidth="0.8" />
-        <circle cx="60" cy="60" r="14" strokeWidth="1.2" />
-        <line x1="60" y1="10" x2="60" y2="110" strokeWidth="0.5" strokeDasharray="2 2" />
-        <line x1="10" y1="60" x2="110" y2="60" strokeWidth="0.5" strokeDasharray="2 2" />
-        <circle cx="60" cy="60" r="3" className="fill-white" />
-        <circle cx="60" cy="28" r="2" className="fill-white" />
-        <circle cx="60" cy="92" r="2" className="fill-white" />
-        <circle cx="28" cy="60" r="2" className="fill-white" />
-        <circle cx="92" cy="60" r="2" className="fill-white" />
+      <svg
+        viewBox="0 0 80 80"
+        className="w-14 h-14 text-white stroke-current fill-none opacity-40 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+      >
+        {/* Core Global Ring & Latitudes */}
+        <circle cx="40" cy="40" r="28" strokeWidth="1" strokeDasharray="2.5 2.5" />
+        <ellipse cx="40" cy="40" rx="14" ry="28" strokeWidth="1" />
+        <line x1="12" y1="40" x2="68" y2="40" strokeWidth="1" />
+        {/* Gateway IP Nodes & Transit Lines */}
+        <line x1="40" y1="12" x2="40" y2="4" strokeWidth="1" />
+        <line x1="40" y1="68" x2="40" y2="76" strokeWidth="1" />
+        <line x1="12" y1="40" x2="4" y2="40" strokeWidth="1" />
+        <line x1="68" y1="40" x2="76" y2="40" strokeWidth="1" />
+        <circle cx="40" cy="4" r="2.5" className="fill-white stroke-none" />
+        <circle cx="40" cy="76" r="2.5" className="fill-white stroke-none" />
+        <circle cx="4" cy="40" r="2.5" className="fill-white stroke-none" />
+        <circle cx="76" cy="40" r="2.5" className="fill-white stroke-none" />
+        <circle cx="40" cy="40" r="3.5" className="fill-white stroke-none" />
       </svg>
     ),
   },
@@ -33,14 +40,24 @@ const pillars = [
     metricLabel: 'Core Latency',
     tags: ['SD-WAN', 'Zero-Trust Architecture', 'Private Interconnects', 'Routing Ops'],
     pathSvg: (
-      <svg viewBox="0 0 120 120" className="w-16 h-16 opacity-30 group-hover:opacity-80 transition-opacity duration-500 text-white stroke-current fill-none">
-        <rect x="20" y="20" width="80" height="80" strokeWidth="0.8" />
-        <rect x="35" y="35" width="50" height="50" strokeWidth="0.8" strokeDasharray="2 2" />
-        <line x1="20" y1="20" x2="100" y2="100" strokeWidth="0.6" />
-        <line x1="100" y1="20" x2="20" y2="100" strokeWidth="0.6" />
-        <circle cx="60" cy="60" r="4" className="fill-white" />
-        <rect x="52" y="14" width="16" height="12" strokeWidth="0.8" />
-        <rect x="52" y="94" width="16" height="12" strokeWidth="0.8" />
+      <svg
+        viewBox="0 0 80 80"
+        className="w-14 h-14 text-white stroke-current fill-none opacity-40 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+      >
+        {/* Zero-Trust Shield Outline */}
+        <path d="M40 10 L64 20 V38 C64 54 40 70 40 70 C40 70 16 54 16 38 V20 Z" strokeWidth="1" />
+        {/* Server Switch Racks Inside */}
+        <rect x="26" y="24" width="28" height="9" rx="1.5" strokeWidth="0.9" />
+        <circle cx="31" cy="28.5" r="1" className="fill-white stroke-none" />
+        <circle cx="35" cy="28.5" r="1" className="fill-white stroke-none" />
+        <line x1="41" y1="28.5" x2="49" y2="28.5" strokeWidth="0.8" strokeDasharray="1.5 1.5" />
+        <rect x="26" y="37" width="28" height="9" rx="1.5" strokeWidth="0.9" />
+        <circle cx="31" cy="41.5" r="1" className="fill-white stroke-none" />
+        <circle cx="35" cy="41.5" r="1" className="fill-white stroke-none" />
+        <line x1="41" y1="41.5" x2="49" y2="41.5" strokeWidth="0.8" strokeDasharray="1.5 1.5" />
+        {/* Secure Interconnect Node */}
+        <path d="M40 46 V57" strokeWidth="0.9" />
+        <circle cx="40" cy="57" r="2" className="fill-white stroke-none" />
       </svg>
     ),
   },
@@ -53,17 +70,24 @@ const pillars = [
     metricLabel: 'Custom Engineered',
     tags: ['Full-Stack Web', 'iOS & Android', 'SaaS Platforms', 'API & Microservices'],
     pathSvg: (
-      <svg viewBox="0 0 120 120" className="w-16 h-16 opacity-30 group-hover:opacity-80 transition-opacity duration-500 text-white stroke-current fill-none">
-        {/* Browser window frame */}
-        <rect x="18" y="22" width="84" height="60" rx="3" strokeWidth="0.8" />
-        <line x1="18" y1="36" x2="102" y2="36" strokeWidth="0.8" />
-        <circle cx="28" cy="29" r="1.5" className="fill-white" />
-        <circle cx="34" cy="29" r="1.5" className="fill-white" />
-        <circle cx="40" cy="29" r="1.5" className="fill-white" />
-        {/* Code / mobile overlay */}
-        <rect x="62" y="44" width="40" height="54" rx="4" strokeWidth="0.9" className="fill-[#050507]" />
-        <line x1="72" y1="50" x2="92" y2="50" strokeWidth="0.6" strokeDasharray="2 2" />
-        <circle cx="82" cy="91" r="2" className="fill-white" />
+      <svg
+        viewBox="0 0 80 80"
+        className="w-14 h-14 text-white stroke-current fill-none opacity-40 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+      >
+        {/* Desktop Web Window */}
+        <rect x="10" y="14" width="46" height="34" rx="2.5" strokeWidth="1" />
+        <line x1="10" y1="23" x2="56" y2="23" strokeWidth="0.8" />
+        <circle cx="16" cy="18.5" r="1" className="fill-white stroke-none" />
+        <circle cx="20" cy="18.5" r="1" className="fill-white stroke-none" />
+        <circle cx="24" cy="18.5" r="1" className="fill-white stroke-none" />
+        <line x1="16" y1="30" x2="30" y2="30" strokeWidth="0.8" />
+        <line x1="16" y1="36" x2="24" y2="36" strokeWidth="0.8" strokeDasharray="1.5 1.5" />
+        {/* Mobile Device Window Overlay */}
+        <rect x="42" y="26" width="28" height="44" rx="4" strokeWidth="1" className="fill-[#050507]" />
+        <line x1="50" y1="31" x2="62" y2="31" strokeWidth="0.8" />
+        <line x1="48" y1="40" x2="64" y2="40" strokeWidth="0.8" strokeDasharray="2 2" />
+        <line x1="48" y1="46" x2="58" y2="46" strokeWidth="0.8" />
+        <circle cx="56" cy="63" r="1.5" className="fill-white stroke-none" />
       </svg>
     ),
   },
@@ -82,9 +106,9 @@ const Overview = () => {
     >
       {/* Background ambient lighting */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(255, 255, 255, 0.035) 0%, transparent 70%)',
         }}
       />
 
@@ -93,118 +117,108 @@ const Overview = () => {
 
       <div className="max-w-[1320px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 sm:mb-28 pb-12 border-b border-white/[0.06]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 sm:mb-28 pb-12 border-b border-white/[0.08]">
           <div>
             {/* Tag */}
             <div className="flex items-center gap-3 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-white/40 animate-pulse" />
-              <p className="text-[0.65rem] sm:text-[0.7rem] font-inter font-medium tracking-[0.28em] uppercase text-white/30">
+              <span className="w-1.5 h-1.5 rounded-full bg-white/50 animate-pulse" />
+              <p className="text-[0.65rem] sm:text-[0.7rem] font-inter font-medium tracking-[0.28em] uppercase text-white/40">
                 Services & Capabilities // Overview
               </p>
             </div>
 
-            {/* Headline */}
-            <h2 className="font-syne font-extrabold text-[2.2rem] sm:text-[3.4rem] md:text-[4.2rem] leading-[1.04] tracking-[-0.04em] text-white">
+            {/* Headline (Crisp Solid White) */}
+            <h2 className="font-syne font-extrabold text-[2.4rem] sm:text-[3.6rem] md:text-[4.4rem] leading-[1.04] tracking-[-0.04em] text-white">
               IP, Networking & <br />
-              <span className="text-white/40">Digital Solutions.</span>
+              Digital Solutions.
             </h2>
           </div>
 
           {/* Editorial statement */}
-          <div className="mt-8 md:mt-0 max-w-[420px]">
+          <div className="mt-8 md:mt-0 max-w-[440px]">
             <p className="font-inter text-[0.88rem] sm:text-[0.95rem] font-light text-white/40 leading-[1.75]">
               We deliver end-to-end technology solutions — from dedicated IP transit and carrier-grade networking to bespoke web and mobile application engineering.
             </p>
           </div>
         </div>
 
-        {/* 3 Architectural Pillars Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* 3 Architectural Pillars Grid with Cut-Corner Borders */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 items-stretch">
           {pillars.map((item, index) => (
             <div
               key={item.index}
               onMouseEnter={() => setActiveHover(index)}
               onMouseLeave={() => setActiveHover(null)}
-              className="group relative flex flex-col justify-between p-8 sm:p-10 rounded-none border border-white/[0.07] bg-white/[0.015] hover:bg-white/[0.035] hover:border-white/[0.18] transition-all duration-500"
+              className="group relative h-full flex flex-col transition-all duration-500 ease-out hover:-translate-y-1.5"
             >
-              {/* Corner crosshairs */}
-              <span className="absolute top-[-4px] left-[-4px] text-[10px] font-mono text-white/20 group-hover:text-white/60 transition-colors">+</span>
-              <span className="absolute top-[-4px] right-[-4px] text-[10px] font-mono text-white/20 group-hover:text-white/60 transition-colors">+</span>
-              <span className="absolute bottom-[-4px] left-[-4px] text-[10px] font-mono text-white/20 group-hover:text-white/60 transition-colors">+</span>
-              <span className="absolute bottom-[-4px] right-[-4px] text-[10px] font-mono text-white/20 group-hover:text-white/60 transition-colors">+</span>
+              {/* Chamfered Outer Border Container with thicker 2px border */}
+              <div
+                className="relative h-full flex flex-col flex-1 p-[2px] bg-white/[0.4] group-hover:bg-white/[0.85] transition-colors duration-500"
+                style={{
+                  clipPath: 'polygon(32px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 32px)',
+                }}
+              >
+                {/* Chamfered Inner Card Content */}
+                <div
+                  className="relative h-full flex-1 flex flex-col justify-between p-8 sm:p-10 bg-[#07070a] group-hover:bg-[#0b0b0f] backdrop-blur-md transition-colors duration-500"
+                  style={{
+                    clipPath: 'polygon(30px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 30px)',
+                  }}
+                >
+                  {/* Subtle corner crosshairs on non-cut corners */}
+                  <span className="absolute top-[4px] right-[4px] text-[9px] font-mono text-white/30 group-hover:text-white/70 transition-colors">+</span>
+                  <span className="absolute bottom-[4px] left-[4px] text-[9px] font-mono text-white/30 group-hover:text-white/70 transition-colors">+</span>
+                  <span className="absolute bottom-[4px] right-[4px] text-[9px] font-mono text-white/30 group-hover:text-white/70 transition-colors">+</span>
 
-              {/* Card top */}
-              <div>
-                {/* Header row */}
-                <div className="flex items-center justify-between mb-8">
-                  <span className="font-mono text-[0.75rem] tracking-[0.2em] text-white/30 group-hover:text-white/80 transition-colors">
-                    {item.index} // {item.category}
-                  </span>
-                  <div>{item.pathSvg}</div>
-                </div>
+                  {/* Card top */}
+                  <div className="flex-1 flex flex-col">
+                    {/* Header row */}
+                    <div className="flex items-center justify-between mb-8 pl-3">
+                      <span className="font-mono text-[0.75rem] tracking-[0.2em] text-white/40 group-hover:text-white transition-colors">
+                        {item.index} // {item.category}
+                      </span>
+                      <div className="flex items-center justify-center">{item.pathSvg}</div>
+                    </div>
 
-                {/* Title */}
-                <h3 className="font-syne font-bold text-[1.4rem] sm:text-[1.65rem] tracking-[-0.03em] text-white mb-4 leading-tight group-hover:text-white transition-colors">
-                  {item.title}
-                </h3>
+                    {/* Title */}
+                    <h3 className="font-syne font-bold text-[1.45rem] sm:text-[1.7rem] tracking-[-0.03em] text-white mb-4 leading-tight group-hover:text-white transition-colors">
+                      {item.title}
+                    </h3>
 
-                {/* Description */}
-                <p className="font-inter text-[0.85rem] sm:text-[0.9rem] font-light text-white/35 leading-[1.7] mb-8">
-                  {item.desc}
-                </p>
-              </div>
+                    {/* Description */}
+                    <p className="font-inter text-[0.85rem] sm:text-[0.9rem] font-light text-white/45 leading-[1.7] mb-8">
+                      {item.desc}
+                    </p>
+                  </div>
 
-              {/* Card bottom */}
-              <div>
-                {/* Metric */}
-                <div className="pt-6 border-t border-white/[0.06] mb-6 flex items-baseline justify-between">
-                  <span className="font-syne font-extrabold text-[1.8rem] text-white tracking-tight">
-                    {item.metric}
-                  </span>
-                  <span className="font-inter text-[0.7rem] font-medium tracking-[0.1em] uppercase text-white/30">
-                    {item.metricLabel}
-                  </span>
-                </div>
+                  {/* Card bottom */}
+                  <div className="mt-auto">
+                    {/* Metric */}
+                    <div className="pt-6 border-t border-white/[0.08] mb-6 flex items-baseline justify-between">
+                      <span className="font-syne font-extrabold text-[1.9rem] text-white tracking-tight">
+                        {item.metric}
+                      </span>
+                      <span className="font-inter text-[0.7rem] font-medium tracking-[0.1em] uppercase text-white/40">
+                        {item.metricLabel}
+                      </span>
+                    </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-1 text-[0.68rem] font-inter font-medium text-white/40 bg-white/[0.03] border border-white/[0.04] rounded-sm group-hover:border-white/[0.1] transition-colors"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 text-[0.68rem] font-inter font-medium text-white/50 bg-white/[0.04] border border-white/[0.08] rounded-sm group-hover:border-white/[0.2] group-hover:text-white/80 transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom Technical Telemetry Strip */}
-        <div className="mt-16 sm:mt-24 p-6 sm:p-8 border border-white/[0.06] bg-white/[0.01] flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div className="flex items-center gap-4">
-            <span className="w-2 h-2 rounded-full bg-emerald-400/80 animate-ping" />
-            <span className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-white/40">
-              European Sovereign Network // Active Operational Nodes
-            </span>
-          </div>
-
-          <div className="flex items-center gap-8 sm:gap-12">
-            <div className="text-left">
-              <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/25">IP & Routing</p>
-              <p className="font-inter text-[0.8rem] font-medium text-white/70">BGP / Tier-1 Transit</p>
-            </div>
-            <div className="text-left">
-              <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/25">Application Stack</p>
-              <p className="font-inter text-[0.8rem] font-medium text-white/70">Web & Mobile Ecosystems</p>
-            </div>
-            <div className="text-left">
-              <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/25">Security</p>
-              <p className="font-inter text-[0.8rem] font-medium text-white/70">Zero-Trust & DDoS Shield</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

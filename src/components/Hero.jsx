@@ -55,7 +55,7 @@ const Hero = () => {
         {/* Tag */}
         <p
           className="hero-animate text-[0.65rem] sm:text-[0.7rem] font-inter font-medium tracking-[0.28em] uppercase text-white/25 mb-10 sm:mb-12"
-          style={{ animationDelay: '0.3s' }}
+          style={{ animationDelay: '0.1s' }}
         >
           Technology Partner for Europe
         </p>
@@ -66,7 +66,7 @@ const Hero = () => {
             className="hero-animate block font-syne font-extrabold leading-[1.02] tracking-[-0.045em] text-white"
             style={{
               fontSize: 'clamp(3rem, 9vw, 7rem)',
-              animationDelay: '0.5s',
+              animationDelay: '0.25s',
             }}
           >
             We Build.
@@ -75,7 +75,7 @@ const Hero = () => {
             className="hero-animate block font-syne font-extrabold leading-[1.02] tracking-[-0.045em] text-white"
             style={{
               fontSize: 'clamp(3rem, 9vw, 7rem)',
-              animationDelay: '0.65s',
+              animationDelay: '0.4s',
             }}
           >
             You Scale.
@@ -89,14 +89,14 @@ const Hero = () => {
             width: '32px',
             height: '1px',
             background: 'rgba(255,255,255,0.12)',
-            animationDelay: '0.8s',
+            animationDelay: '0.55s',
           }}
         />
 
         {/* Subtitle */}
         <p
           className="hero-animate font-inter text-[0.88rem] sm:text-[1rem] font-light text-white/30 max-w-[420px] mx-auto leading-[1.7] mb-12 sm:mb-14"
-          style={{ animationDelay: '0.9s' }}
+          style={{ animationDelay: '0.65s' }}
         >
           End-to-end technology solutions for
           <br className="hidden sm:block" /> ambitious European businesses.
@@ -105,7 +105,7 @@ const Hero = () => {
         {/* CTAs */}
         <div
           className="hero-animate flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12"
-          style={{ animationDelay: '1.1s' }}
+          style={{ animationDelay: '0.8s' }}
         >
           {/* Primary CTA */}
           <a
@@ -131,7 +131,7 @@ const Hero = () => {
       {/* ── Scroll indicator ── */}
       <div
         className="hero-animate absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
-        style={{ animationDelay: '1.6s' }}
+        style={{ animationDelay: '1.1s' }}
       >
         <span className="text-[0.55rem] font-inter font-medium tracking-[0.22em] uppercase text-white/15">
           Scroll
