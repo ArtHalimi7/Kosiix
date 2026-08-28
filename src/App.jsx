@@ -6,9 +6,9 @@ import About from './pages/About';
 import Services from './pages/Services';
 
 const App = () => {
-  
+
   return (
-    <main className='background1'>
+    <main className="bg-[#050507] min-h-screen">
       <Router>
         <Navbar />
         <Routes>
