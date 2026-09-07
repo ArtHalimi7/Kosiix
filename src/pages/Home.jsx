@@ -1,3 +1,4 @@
+import PageMeta from '../components/PageMeta';
 import Hero from '../components/Hero';
 import Overview from '../components/Overview';
 import ScrollExpand from '../components/ScrollExpand/ScrollExpand';
@@ -10,6 +11,11 @@ import bgImage from '../assets/bg.png';
 const Home = () => {
   return (
     <>
+      <PageMeta
+        title="KOSIIX — Sovereign Technology Partner for Europe | IP Transit & Dedicated Squads"
+        description="High-capacity Tier-1 IP transit, enterprise SD-WAN, and bespoke software engineering squads for ambitious European businesses."
+        canonicalPath="/"
+      />
       <Hero />
 
       {/* ── Continuous Unified Canvas for Overview, Showcase, WhyOutsource, Calculator & FAQ ── */}

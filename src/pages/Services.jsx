@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import PageMeta from '../components/PageMeta';
 import SectionDivider from '../components/SectionDivider';
 
 const serviceCategories = [
@@ -63,6 +65,11 @@ const Services = () => {
 
   return (
     <div className="relative w-full bg-[#050507] min-h-screen text-white select-none overflow-hidden">
+      <PageMeta
+        title="Services & Infrastructure — Tier-1 IP Transit & SD-WAN | KOSIIX"
+        description="Tier-1 IP Transit, multi-homed BGP peering, enterprise SD-WAN, zero-trust security, and dedicated full-stack agile software engineering pods."
+        canonicalPath="/services"
+      />
       {/* ── Background Glow Canvas ── */}
       <div
         className="blob-float-1 absolute top-[4%] -left-20 w-[550px] sm:w-[800px] h-[400px] sm:h-[600px] rounded-full pointer-events-none z-0"
@@ -239,12 +246,12 @@ const Services = () => {
           </div>
 
           <div className="relative z-10 flex items-center gap-6">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-black font-inter font-semibold text-[0.85rem] tracking-wide hover:bg-white/90 active:scale-95 transition-all shadow-[0_0_25px_rgba(255,255,255,0.15)]"
             >
               Consult an Architect
-            </a>
+            </Link>
           </div>
         </div>
       </div>

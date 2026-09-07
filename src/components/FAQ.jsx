@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const faqs = [
   {
@@ -179,12 +180,12 @@ const FAQ = () => {
         <div className="mt-16 text-center">
           <p className="font-inter text-[0.84rem] text-white/40">
             Have a custom architecture or compliance inquiry?{' '}
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="text-white underline underline-offset-4 hover:text-white/80 transition-colors font-medium ml-1"
             >
               Consult an Architect directly →
-            </a>
+            </Link>
           </p>
         </div>
       </div>

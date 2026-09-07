@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="100%" height="100%">
+  <!-- Pure Black Background -->
+  <rect width="1024" height="1024" fill="#000000"/>
+  <!-- Pure Solid White Bold Modern 'K' Glyph Generated with Gemini -->
+  <polygon points="238,192 374,192 374,460 608,192 782,192 448,552 796,832 622,832 374,548 374,832 238,832" fill="#ffffff"/>
+</svg>

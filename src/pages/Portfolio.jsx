@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import PageMeta from '../components/PageMeta';
 import SectionDivider from '../components/SectionDivider';
 
 const caseStudies = [
@@ -72,6 +74,11 @@ const caseStudies = [
 const Portfolio = () => {
   return (
     <div className="relative w-full bg-[#050507] min-h-screen text-white select-none overflow-hidden">
+      <PageMeta
+        title="Case Studies & Deployments — Enterprise Systems | KOSIIX"
+        description="Explore enterprise initiatives delivered by KOSIIX squads: Swiss fintech HFT engines, European BGP peering fabrics, and GDPR-native healthcare cloud platforms."
+        canonicalPath="/portfolio"
+      />
       {/* ── Background Glow Canvas ── */}
       <div
         className="blob-float-1 absolute top-[4%] -left-20 w-[550px] sm:w-[800px] h-[400px] sm:h-[600px] rounded-full pointer-events-none z-0"
@@ -244,12 +251,12 @@ const Portfolio = () => {
           </div>
 
           <div className="relative z-10 flex items-center gap-6">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-black font-inter font-semibold text-[0.85rem] tracking-wide hover:bg-white/90 active:scale-95 transition-all shadow-[0_0_25px_rgba(255,255,255,0.15)]"
             >
               Consult an Architect
-            </a>
+            </Link>
           </div>
         </div>
       </div>

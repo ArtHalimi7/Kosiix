@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
 const regions = [
   { id: 'ch', name: 'Switzerland (Zurich)', avgSeniorCost: 14000, currency: 'CHF' },
@@ -337,12 +338,29 @@ const SquadCalculator = () => {
                 </div>
 
                 {/* Direct Action Button */}
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
+                  state={{
+                    squadConfig: {
+                      totalHeadcount,
+                      devCount,
+                      archCount,
+                      devopsCount,
+                      regionName: selectedRegion.name,
+                      currency: selectedRegion.currency,
+                      durationLabel: selectedDuration.label,
+                      durationMonths: selectedDuration.months,
+                      monthlyKosiix: stats.monthlyKosiix,
+                      totalKosiix: stats.totalKosiix,
+                      totalSavings: stats.totalSavings,
+                      monthlySavings: stats.monthlySavings,
+                      savingsPercent: stats.savingsPercent,
+                    },
+                  }}
                   className="relative z-10 w-full py-3.5 text-center bg-white text-black font-inter font-semibold text-[0.84rem] tracking-wide hover:bg-white/90 active:scale-[0.99] transition-all shadow-[0_0_25px_rgba(255,255,255,0.15)] block cursor-pointer"
                 >
                   Reserve This {totalHeadcount}-Engineer Pod →
-                </a>
+                </Link>
               </div>
             </div>
           </div>

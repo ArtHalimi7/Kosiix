@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const corePillars = [
   {
@@ -415,12 +416,12 @@ const WhyOutsource = () => {
           </div>
 
           <div className="relative z-10 flex items-center gap-6">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-black font-inter font-semibold text-[0.85rem] tracking-wide hover:bg-white/90 active:scale-95 transition-all shadow-[0_0_25px_rgba(255,255,255,0.15)]"
             >
               Consult an Architect
-            </a>
+            </Link>
           </div>
         </div>
       </div>

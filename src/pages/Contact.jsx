@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
+import PageMeta from '../components/PageMeta';
 import SectionDivider from '../components/SectionDivider';
 
 const projectTypes = [
@@ -20,6 +22,8 @@ const budgetRanges = [
 const timelines = ['Immediate (< 10 Days)', '1 – 2 Months', 'Quarterly Initiative'];
 
 const Contact = () => {
+  const location = useLocation();
+  const [squadConfig, setSquadConfig] = useState(location.state?.squadConfig || null);
   const [selectedType, setSelectedType] = useState('Dedicated Engineering Squad');
   const [selectedBudget, setSelectedBudget] = useState('€25k – €50k / mo');
   const [selectedTimeline, setSelectedTimeline] = useState('Immediate (< 10 Days)');
@@ -31,6 +35,30 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    if (location.state?.squadConfig) {
+      const cfg = location.state.squadConfig;
+      setSquadConfig(cfg);
+      setSelectedType('Dedicated Engineering Squad');
+
+      if (cfg.monthlyKosiix < 25000) {
+        setSelectedBudget('€10k – €25k / mo');
+      } else if (cfg.monthlyKosiix < 50000) {
+        setSelectedBudget('€25k – €50k / mo');
+      } else {
+        setSelectedBudget('€50k – €100k+ / mo');
+      }
+
+      if (cfg.durationMonths <= 3) {
+        setSelectedTimeline('Immediate (< 10 Days)');
+      } else if (cfg.durationMonths <= 6) {
+        setSelectedTimeline('1 – 2 Months');
+      } else {
+        setSelectedTimeline('Quarterly Initiative');
+      }
+    }
+  }, [location.state]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.email || !formData.name) return;
@@ -39,6 +67,11 @@ const Contact = () => {
 
   return (
     <div className="relative w-full bg-[#050507] min-h-screen text-white select-none overflow-hidden">
+      <PageMeta
+        title="Contact Leadership & Architecture Scoping | KOSIIX"
+        description="Connect directly with our solutions architects in Zurich and Frankfurt to scope dedicated European squads, IP transit, and cloud infrastructure."
+        canonicalPath="/contact"
+      />
       {/* ── Background Glow Canvas ── */}
       <div
         className="blob-float-1 absolute top-[4%] -left-20 w-[550px] sm:w-[800px] h-[400px] sm:h-[600px] rounded-full pointer-events-none z-0"
@@ -114,6 +147,13 @@ const Contact = () => {
                     <p className="font-inter text-[0.92rem] text-white/60 max-w-md mx-auto leading-relaxed">
                       Thank you, {formData.name}. Our principal solutions architect will review your project parameters and respond to <span className="text-white font-medium">{formData.email}</span> within 24 hours.
                     </p>
+
+                    {squadConfig && (
+                      <div className="p-3.5 bg-emerald-400/[0.06] border border-emerald-400/25 rounded font-mono text-[0.75rem] text-emerald-400/90 max-w-md mx-auto">
+                        Attached Pod Scope: {squadConfig.totalHeadcount}-Engineer Dedicated Squad // {squadConfig.regionName} ({squadConfig.durationLabel})
+                      </div>
+                    )}
+
                     <button
                       onClick={() => setSubmitted(false)}
                       className="px-6 py-2.5 rounded-sm bg-white/[0.05] border border-white/20 text-white/70 hover:text-white font-mono text-xs uppercase tracking-wider transition-colors cursor-pointer"
@@ -123,6 +163,57 @@ const Contact = () => {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="relative z-10 space-y-10">
+                    {/* Pod Transfer Configuration Banner */}
+                    {squadConfig && (
+                      <div className="p-5 bg-white/[0.03] border border-emerald-400/35 rounded-sm relative overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+                          <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                            <span className="font-mono text-[0.66rem] uppercase tracking-wider text-emerald-400 font-semibold">
+                              Squad Pod Transferred // {squadConfig.regionName}
+                            </span>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setSquadConfig(null)}
+                            className="text-[0.68rem] font-mono text-white/40 hover:text-white transition-colors underline cursor-pointer"
+                          >
+                            Clear pod specification
+                          </button>
+                        </div>
+
+                        <div className="font-syne font-bold text-lg sm:text-xl text-white tracking-tight mb-2">
+                          {squadConfig.totalHeadcount}-Engineer Dedicated Squad ({squadConfig.durationLabel})
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-2 mb-3">
+                          <span className="px-2.5 py-0.5 rounded-xs bg-white/[0.06] border border-white/15 font-mono text-[0.72rem] text-white">
+                            {squadConfig.devCount}x Full-Stack
+                          </span>
+                          <span className="px-2.5 py-0.5 rounded-xs bg-white/[0.06] border border-white/15 font-mono text-[0.72rem] text-white">
+                            {squadConfig.archCount}x Principal Architect
+                          </span>
+                          {squadConfig.devopsCount > 0 && (
+                            <span className="px-2.5 py-0.5 rounded-xs bg-white/[0.06] border border-white/15 font-mono text-[0.72rem] text-white">
+                              {squadConfig.devopsCount}x DevOps
+                            </span>
+                          )}
+                          <span className="px-2.5 py-0.5 rounded-xs bg-emerald-400/10 border border-emerald-400/30 font-mono text-[0.72rem] text-emerald-400">
+                            {squadConfig.regionName}
+                          </span>
+                        </div>
+
+                        <div className="pt-2.5 border-t border-white/[0.08] flex items-center justify-between font-mono text-[0.72rem]">
+                          <span className="text-white/40">
+                            Est. Monthly: ~{squadConfig.currency}{squadConfig.monthlyKosiix?.toLocaleString()}/mo
+                          </span>
+                          <span className="text-emerald-400 font-semibold">
+                            +{squadConfig.currency}{squadConfig.totalSavings?.toLocaleString()} Arbitrage ({squadConfig.savingsPercent}%)
+                          </span>
+                        </div>
+                      </div>
+                    )}
+
                     {/* Step 1: Project Type */}
                     <div>
                       <span className="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-white/40 block mb-4">

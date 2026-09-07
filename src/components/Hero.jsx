@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import LightRays from './LightRays/LightRays';
 
 const Hero = () => {
@@ -63,7 +64,7 @@ const Hero = () => {
         {/* Headline */}
         <h1 className="mb-7 sm:mb-8">
           <span
-            className="hero-animate block font-syne font-extrabold leading-[1.02] tracking-[-0.045em] text-white"
+            className="hero-animate block font-syne font-extrabold leading-[1.02] tracking-[-0.04em] text-white"
             style={{
               fontSize: 'clamp(3rem, 9vw, 7rem)',
               animationDelay: '0.25s',
@@ -72,7 +73,7 @@ const Hero = () => {
             We Build.
           </span>
           <span
-            className="hero-animate block font-syne font-extrabold leading-[1.02] tracking-[-0.045em] text-white"
+            className="hero-animate block font-syne font-extrabold leading-[1.02] tracking-[-0.04em] text-white"
             style={{
               fontSize: 'clamp(3rem, 9vw, 7rem)',
               animationDelay: '0.4s',
@@ -108,36 +109,38 @@ const Hero = () => {
           style={{ animationDelay: '0.8s' }}
         >
           {/* Primary CTA */}
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="group inline-flex items-center gap-4"
           >
             <span className="text-[0.82rem] font-inter font-medium text-white/80 tracking-[0.02em] group-hover:text-white transition-colors duration-300">
               Start a Project
             </span>
             <span className="cta-line block w-8 h-[1px] bg-white/20 group-hover:w-14 group-hover:bg-kosiix-accent" />
-          </a>
+          </Link>
 
           {/* Secondary CTA */}
-          <a
-            href="#portfolio"
+          <Link
+            to="/portfolio"
             className="text-[0.82rem] font-inter font-medium text-white/20 tracking-[0.02em] hover:text-white/50 transition-colors duration-300"
           >
             Our Work
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* ── Scroll indicator ── */}
-      <div
-        className="hero-animate absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
-        style={{ animationDelay: '1.1s' }}
-      >
-        <span className="text-[0.55rem] font-inter font-medium tracking-[0.22em] uppercase text-white/15">
-          Scroll
-        </span>
-        <div className="relative w-[1px] h-7 overflow-hidden">
-          <div className="scroll-line-inner" />
+      <div className="absolute bottom-6 sm:bottom-10 inset-x-0 z-10 flex justify-center pointer-events-none">
+        <div
+          className="hero-animate flex flex-col items-center gap-3"
+          style={{ animationDelay: '1.1s' }}
+        >
+          <span className="text-[0.55rem] font-inter font-medium tracking-[0.22em] uppercase text-white/15">
+            Scroll
+          </span>
+          <div className="relative w-[1px] h-7 overflow-hidden">
+            <div className="scroll-line-inner" />
+          </div>
         </div>
       </div>
     </section>

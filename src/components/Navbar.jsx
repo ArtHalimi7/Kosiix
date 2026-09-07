@@ -34,9 +34,8 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-40 border-b border-transparent transition-[background-color,border-color,backdrop-filter] duration-500 ease-out ${
-          scrolled ? 'navbar-scrolled' : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 w-full z-40 border-b border-transparent transition-[background-color,border-color,backdrop-filter] duration-500 ease-out ${scrolled ? 'navbar-scrolled' : 'bg-transparent'
+          }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-[72px]">
           {/* Logo */}
@@ -68,14 +67,12 @@ const Navbar = () => {
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
             <span
-              className={`block w-6 h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center ${
-                mobileOpen ? 'rotate-45 translate-y-[3.75px]' : ''
-              }`}
+              className={`block w-6 h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center ${mobileOpen ? 'rotate-45 translate-y-[3.75px]' : ''
+                }`}
             />
             <span
-              className={`block h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center ${
-                mobileOpen ? 'w-6 -rotate-45 -translate-y-[3.75px]' : 'w-3.5'
-              }`}
+              className={`block h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center ${mobileOpen ? 'w-6 -rotate-45 -translate-y-[3.75px]' : 'w-3.5'
+                }`}
             />
           </button>
         </div>
@@ -83,18 +80,16 @@ const Navbar = () => {
 
       {/* Mobile Sidebar Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/70 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300 ${
-          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed inset-0 bg-black/70 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300 ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
         onClick={() => setMobileOpen(false)}
         aria-hidden="true"
       />
 
       {/* Mobile Sidebar Drawer */}
       <aside
-        className={`fixed top-0 right-0 h-full w-[84vw] max-w-[340px] bg-[#07070a] border-l border-white/[0.08] z-50 md:hidden flex flex-col justify-between p-6 sm:p-8 shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          mobileOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 right-0 h-full w-[84vw] max-w-[340px] bg-[#07070a] border-l border-white/[0.08] z-50 md:hidden flex flex-col justify-between p-6 sm:p-8 shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         {/* Top Header with X Close Button */}
         <div className="pb-5 border-b border-white/[0.08] flex items-center justify-between">
